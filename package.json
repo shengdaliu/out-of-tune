@@ -1,0 +1,20 @@
+{
+  "name": "out-of-tune",
+  "version": "0.0.0",
+  "description": "Melody Generator based on common parameters like Key Signature, Scale, Time Signature and other less common or custom parameters...",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shengda Liu",
+  "license": "ISC",
+  "dependencies": {
+    "@tonaljs/modules": "^3.4.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
