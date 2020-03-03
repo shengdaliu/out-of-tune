@@ -1,5 +1,8 @@
 const { Tonal, Scale, Progression, Mode, Chord, Key } = require('@tonaljs/modules')
 
+const MidiWriter = require('midi-writer-js')
+const MidiPlayer = require('midi-player-js')
+
 const logger = require('./services/logger')
 
 logger.info(Tonal.note("A4").midi) // => 60
@@ -117,3 +120,33 @@ logger.info('%j', Key.minorKey('C')) // =>
   },
 }
 */
+
+// Start with a new track
+var track = new MidiWriter.Track()
+
+// Define an instrument (optional):
+track.addEvent(new MidiWriter.ProgramChangeEvent({instrument: 1}))
+
+// Add some notes:
+var note = new MidiWriter.NoteEvent({pitch: ['C4', 'D4', 'E4'], duration: '4'})
+track.addEvent(note)
+
+// Generate a data URI
+var write = new MidiWriter.Writer(track)
+var midiDataUri = write.dataUri()
+write.saveMIDI('./test')
+
+var midiFileData = write.buildFile()
+
+// Initialize player and register event handler
+var Player = new MidiPlayer.Player(function(event) {
+	logger.info('%j', event)
+})
+
+// // Load a MIDI file
+// Player.loadFile('./test.mid')
+// Player.play()
+
+// Load a MIDI file
+Player.loadDataUri(midiDataUri)
+Player.play()

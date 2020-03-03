@@ -45,7 +45,9 @@ npm start
 
 This project is based on other packages and music theory libraries:
 
-- Tonal: https://github.com/tonaljs/tonal
+- [Tonal](https://github.com/tonaljs/tonal)
+- [MidiWriterJS](https://github.com/grimmdude/MidiWriterJS)
+- [MidiPlayerJS](https://github.com/grimmdude/MidiPlayerJS)
 
 <!-- ## Deployment -->
 

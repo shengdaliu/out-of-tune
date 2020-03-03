@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@tonaljs/modules": "^3.4.4",
+    "midi-player-js": "^2.0.5",
+    "midi-writer-js": "^1.7.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {
