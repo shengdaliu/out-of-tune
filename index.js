@@ -3,7 +3,17 @@ const { Tonal, Scale, Progression, Mode, Chord, Key } = require('@tonaljs/module
 const MidiWriter = require('midi-writer-js')
 const MidiPlayer = require('midi-player-js')
 
+const Tone = require('tone')
+
 const logger = require('./services/logger')
+
+
+//create a synth and connect it to the master output (your speakers)
+const synth = new Tone.Synth().toMaster()
+
+//play a middle 'C' for the duration of an 8th note
+synth.triggerAttackRelease("C4", "8n")
+
 
 logger.info(Tonal.note("A4").midi) // => 60
 logger.info(Tonal.note("a4").freq) // => 440
