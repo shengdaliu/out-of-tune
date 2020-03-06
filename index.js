@@ -3,27 +3,25 @@ const { Tonal, Scale, Progression, Mode, Chord, Key } = require('@tonaljs/module
 const MidiWriter = require('midi-writer-js')
 const MidiPlayer = require('midi-player-js')
 
-const Tone = require('tone')
+// const Tone = require('tone')
 
 const logger = require('./services/logger')
 
+// create a synth and connect it to the master output (your speakers)
+// const synth = new Tone.Synth().toMaster()
 
-//create a synth and connect it to the master output (your speakers)
-const synth = new Tone.Synth().toMaster()
+// play a middle 'C' for the duration of an 8th note
+// synth.triggerAttackRelease("C4", "8n")
 
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n")
+logger.info(Tonal.note('A4').midi) // => 60
+logger.info(Tonal.note('a4').freq) // => 440
+logger.info(Tonal.note('c#2').accidentals) // => '#'
+logger.info(Tonal.note('x').midi) // => undefined
+logger.info(Tonal.interval('5P').semitones) // => 7
+logger.info(Tonal.transpose('C4', '5P')) // => "G4"
+logger.info(Tonal.distance('C4', 'G4')) // => "5P"
 
-
-logger.info(Tonal.note("A4").midi) // => 60
-logger.info(Tonal.note("a4").freq) // => 440
-logger.info(Tonal.note("c#2").accidentals) // => '#'
-logger.info(Tonal.note("x").midi) // => undefined
-logger.info(Tonal.interval("5P").semitones) // => 7
-logger.info(Tonal.transpose("C4", "5P")) // => "G4"
-logger.info(Tonal.distance("C4", "G4")) // => "5P"
-
-logger.info('%j', Scale.scale("C5 pentatonic"))
+logger.info('%j', Scale.scale('C5 pentatonic'))
 // =>
 // {
 //   empty: false,
@@ -37,21 +35,21 @@ logger.info('%j', Scale.scale("C5 pentatonic"))
 //   chroma: "101010010100",
 //   normalized: "101010010100"
 // }
-logger.info('%j', Scale.scaleChords("pentatonic"))
+logger.info('%j', Scale.scaleChords('pentatonic'))
 // => ["5", "64", "M", "M6", "Madd9", "Msus2"]
 
-logger.info('%j', Scale.extended("major"))
+logger.info('%j', Scale.extended('major'))
 // => ["bebop", "bebop dominant", "bebop major", "chromatic", "ichikosucho"]
 
-logger.info('%j', Scale.reduced("major"))
+logger.info('%j', Scale.reduced('major'))
 // => ["ionian pentatonic", "major pentatonic", "ritusen"]
 
-logger.info('%j', Progression.fromRomanNumerals("C", ["IMaj7", "IIm7", "V7"]))
+logger.info('%j', Progression.fromRomanNumerals('C', ['IMaj7', 'IIm7', 'V7']))
 // => ["CMaj7", "Dm7", "G7"]
-logger.info('%j', Progression.toRomanNumerals("C", ["CMaj7", "Dm7", "G7"]))
+logger.info('%j', Progression.toRomanNumerals('C', ['CMaj7', 'Dm7', 'G7']))
 // => "IMaj7", "IIm7", "V7"]
 
-logger.info('%j', Mode.mode("major"))
+logger.info('%j', Mode.mode('major'))
 // {
 //   name: "ionian",
 //   aliases: ["major"]
@@ -66,7 +64,7 @@ logger.info('%j', Mode.mode("major"))
 logger.info('%j', Mode.entries().map(mode => mode.name))
 // => ["ionian", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian"];
 
-logger.info('%j', Chord.chord("Cmaj7"))
+logger.info('%j', Chord.chord('Cmaj7'))
 // =>
 // {
 //   name: "C major seventh",
@@ -80,16 +78,15 @@ logger.info('%j', Chord.chord("Cmaj7"))
 //   quality: "Major"
 // };
 
-logger.info('%j', Chord.transpose("Eb7b9", "5P")) // => "Bb7b9"
+logger.info('%j', Chord.transpose('Eb7b9', '5P')) // => "Bb7b9"
 
-logger.info('%j', Chord.chordScales("C7b9"))
+logger.info('%j', Chord.chordScales('C7b9'))
 // => ["phrygian dominant", "flamenco", "spanish heptatonic", "half-whole diminished", "chromatic"]
 
-logger.info('%j', Chord.extended("Cmaj7"))
+logger.info('%j', Chord.extended('Cmaj7'))
 // => [ 'Cmaj#4', 'Cmaj7#9#11', 'Cmaj9', 'CM7add13', 'Cmaj13', 'Cmaj9#11', 'CM13#11', 'CM7b9' ]
 
-logger.info('%j', Chord.reduced("Cmaj7")) // => ["C5", "CM"]
-
+logger.info('%j', Chord.reduced('Cmaj7')) // => ["C5", "CM"]
 
 logger.info('%j', Key.minorKey('C')) // =>
 /*
@@ -135,10 +132,10 @@ logger.info('%j', Key.minorKey('C')) // =>
 var track = new MidiWriter.Track()
 
 // Define an instrument (optional):
-track.addEvent(new MidiWriter.ProgramChangeEvent({instrument: 1}))
+track.addEvent(new MidiWriter.ProgramChangeEvent({ instrument: 1 }))
 
 // Add some notes:
-var note = new MidiWriter.NoteEvent({pitch: ['C4', 'D4', 'E4'], duration: '4'})
+var note = new MidiWriter.NoteEvent({ pitch: ['C4', 'D4', 'E4'], duration: '4' })
 track.addEvent(note)
 
 // Generate a data URI
@@ -146,11 +143,11 @@ var write = new MidiWriter.Writer(track)
 var midiDataUri = write.dataUri()
 write.saveMIDI('./test')
 
-var midiFileData = write.buildFile()
+// var midiFileData = write.buildFile()
 
 // Initialize player and register event handler
-var Player = new MidiPlayer.Player(function(event) {
-	logger.info('%j', event)
+var Player = new MidiPlayer.Player(function (event) {
+  logger.info('%j', event)
 })
 
 // // Load a MIDI file
