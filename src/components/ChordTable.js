@@ -46,7 +46,7 @@ function ChordTable (props) {
     })
 
     setTrack(calibratedChords)
-  }, [props.keySignature])
+  }, [props.keySignature, props.progression])
 
   function handlePlayChord (chord, duration) {
     const chordNotes = Chord.chord(chord).notes.map(x => x + '4')
