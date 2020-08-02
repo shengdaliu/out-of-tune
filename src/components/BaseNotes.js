@@ -8,13 +8,13 @@ import { Tonal, Scale, Progression, Mode, Chord, Key } from '@tonaljs/modules'
 // import MidiWriter from 'midi-writer-js'
 // import MidiPlayer from 'midi-player-js'
 
-import Tone from 'tone'
+import { Synth, PolySynth } from 'tone'
 
 // // create a synth and connect it to the master output (your speakers)
-const synth = new Tone.Synth().toMaster()
+const synth = new Synth().toMaster()
 
 // a 4 voice Synth
-const polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster()
+const polySynth = new PolySynth(4, Synth).toMaster()
 
 function BaseNotes (props) {
   function handlePlayNote (note, duration) {
