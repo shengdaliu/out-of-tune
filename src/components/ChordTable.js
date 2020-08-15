@@ -30,7 +30,7 @@ const synth = new Synth().toMaster()
 // }).toMaster()
 
 // a 4 voice Synth
-const polySynth = new PolySynth(4, Synth).toMaster()
+const polySynth = new PolySynth(Synth).toDestination()
 
 function ChordTable (props) {
   const [track, setTrack] = useState([])

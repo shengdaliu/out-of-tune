@@ -16,9 +16,9 @@ import { Tonal, Scale, Progression, Mode, Chord, Key } from '@tonaljs/modules'
 function ParameterPannel (props) {
   return (
 
-    <div className={{ flexGrow: 1 }}>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
+    <div className='flex flex-column'>
+      <Grid container spacing={1} direction={"column"}>
+        <Grid container item xs={12} spacing={3} direction={"column"}>
           <React.Fragment>
             <Grid item xs={3}>
               <FormControl variant="outlined" style={{ width: '120px', padding: '10px' }}>

@@ -13,7 +13,7 @@ import { Synth, PolySynth } from 'tone'
 const synth = new Synth().toMaster()
 
 // a 4 voice Synth
-const polySynth = new PolySynth(4, Synth).toMaster()
+const polySynth = new PolySynth(Synth).toDestination()
 
 function ScaleNotes (props) {
   const [notes, setNotes] = useState([])
