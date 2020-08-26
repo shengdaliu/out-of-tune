@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Melody Generator based on common parameters like Key Signature, Scale, Time Signature and other less common or custom parameters...",
   "main": "index.js",
+  "homepage": "http://shengdaliu.github.io/out-of-tune",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "server": "nodemon index.js",
     "react": "react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run react\"",
@@ -36,7 +39,10 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-standard": "^4.0.1",
-    "nodemon": "^2.0.4"
+    "gh-pages": "^3.1.0",
+    "nodemon": "^2.0.4",
+    "prettier": "1.19.1",
+    "prettier-eslint": "^11.0.0"
   },
   "browserslist": {
     "production": [

@@ -34,7 +34,7 @@ function App () {
         />
       </div>
       <div className='py1 px2 flex flex-column'>
-        <h2>Basic 4 Chords Progressions vi IV I V</h2>
+        <h2>Basic 4 Chords Progressions {progression}</h2>
         <ChordTable keySignature={keySignature} progression={progression.split(' - ')}/>
         <h2>Major Scale Notes</h2>
         <ScaleNotes keySignature={keySignature} scaleName={'major'}/>
