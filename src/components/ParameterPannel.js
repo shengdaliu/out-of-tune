@@ -48,12 +48,12 @@ function ParameterPannel (props) {
                   value={props.progression}
                   onChange={props.handleProgressionChangeEvent}
                 >
-                  {/* https://en.wikipedia.org/wiki/List_of_chord_progressions */}
-                  <MenuItem value={'I - IV - V'}>The Popular Kid: I - IV - V</MenuItem>
-                  <MenuItem value={'I - V - VIm - IV'}>The Sensitive One: I – V – vi – IV</MenuItem>
-                  <MenuItem value={'VIm - IV - I - V'}>The Sensitive Two: vi – IV - I – V</MenuItem>
-                  <MenuItem value={'IIm - V - I'}>The Jazz Cat: ii – V – I</MenuItem>
-                  <MenuItem value={'I - V - VIm - iii - IV - I - IV - V'}>The Canon: I – V – vi – iii – IV – I – IV – V</MenuItem>
+                  <MenuItem value={'I - IV - V'}>I - IV - V</MenuItem>
+                  <MenuItem value={'I - V - VIm - IV'}>I – V – vi – IV</MenuItem>
+                  <MenuItem value={'VIm - IV - I - V'}>vi – IV - I – V</MenuItem>
+                  <MenuItem value={'IIm - V - I'}>ii – V – I</MenuItem>
+                  <MenuItem value={'I - V - VIm - iii - IV - I - IV - V'}>I – V – vi – iii – IV – I – IV – V</MenuItem>
+                  <MenuItem value={'I7 - VI7 - V7'}>I7 - VI7 - V7</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
