@@ -23,6 +23,9 @@
     "no-mixed-spaces-and-tabs": "off",
     "quotes": "off",
     "react/prop-types": "off",
-    "space-after-function-name": "off"
+    "space-after-function-name": "off",
+    "space-before-function-paren": "off",
+    "comma-dangle": "off",
+    "react/no-unescaped-entities": "off"
   }
 }

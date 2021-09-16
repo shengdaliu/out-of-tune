@@ -45,7 +45,7 @@ function ChordTable(props) {
     chords.forEach((chord) => {
       calibratedChords.push({
         chord: chord,
-        notes: Chord.chord(chord).notes.map((x) => x + '4'),
+        notes: Chord.chord(chord).notes.map((x) => x + '4')
       })
     })
 

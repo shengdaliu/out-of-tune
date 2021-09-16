@@ -1,7 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css); */
 /* @import '.scss'; */
 
-
 /* Global */
 body,
 html,
@@ -23,7 +22,8 @@ html,
   letter-spacing: 0.4px;
 }
 
-.link, a.link:hover {
+.link,
+a.link:hover {
   color: skyblue;
   text-decoration: underline;
   font-weight: bold;
