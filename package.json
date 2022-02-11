@@ -26,7 +26,7 @@
     "css-loader": "^6.2.0",
     "midi-player-js": "^2.0.14",
     "midi-writer-js": "^2.0.1",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
