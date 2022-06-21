@@ -48,6 +48,7 @@ function ParameterPannel (props) {
                   value={props.progression}
                   onChange={props.handleProgressionChangeEvent}
                 >
+                  <MenuItem value={'IV - V - iii - VIm'}>IV - V - iii - vi (J-Pop/Rock)</MenuItem>
                   <MenuItem value={'I - IV - V'}>I - IV - V</MenuItem>
                   <MenuItem value={'I - V - VIm - IV'}>I – V – vi – IV (Optimistic)</MenuItem>
                   <MenuItem value={'V - VIm - IV - I'}>V – vi – IV – I</MenuItem>
