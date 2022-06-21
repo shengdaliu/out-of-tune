@@ -17,12 +17,6 @@ function App() {
     setProgression(e.target.value)
   }
 
-  console.log('Key in App')
-  console.log(keySignature)
-
-  console.log('Progression in App')
-  console.log(progression)
-
   return (
     <div className="py2 px4 mx4 flex flex-row">
       <div className="py1 px2 flex flex-column">
