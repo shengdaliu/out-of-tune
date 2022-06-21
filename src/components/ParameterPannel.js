@@ -13,12 +13,11 @@ import Select from '@material-ui/core/Select'
 
 import { Tonal, Scale, Progression, Mode, Chord, Key } from '@tonaljs/modules'
 
-function ParameterPannel (props) {
+function ParameterPannel(props) {
   return (
-
-    <div className='flex flex-column'>
-      <Grid container spacing={1} direction={"column"}>
-        <Grid container item xs={12} spacing={3} direction={"column"}>
+    <div className="flex flex-column">
+      <Grid container spacing={1} direction={'column'}>
+        <Grid container item xs={12} spacing={3} direction={'column'}>
           <React.Fragment>
             <Grid item xs={3}>
               <FormControl variant="outlined" style={{ width: '120px', padding: '10px' }}>
@@ -48,24 +47,24 @@ function ParameterPannel (props) {
                   value={props.progression}
                   onChange={props.handleProgressionChangeEvent}
                 >
-                  <MenuItem value={'IV - V - iii - VIm'}>IV - V - iii - vi (J-Pop/Rock)</MenuItem>
                   <MenuItem value={'I - IV - V'}>I - IV - V</MenuItem>
                   <MenuItem value={'I - V - VIm - IV'}>I – V – vi – IV (Optimistic)</MenuItem>
                   <MenuItem value={'V - VIm - IV - I'}>V – vi – IV – I</MenuItem>
                   <MenuItem value={'VIm - IV - I - V'}>vi – IV - I – V (Pessimistic)</MenuItem>
                   <MenuItem value={'IV - I - V - VIm'}>IV - I – V - vi</MenuItem>
+                  <MenuItem value={'IV - V - iii - VIm'}>IV - V - iii - vi (J-Pop/Rock)</MenuItem>
                   <MenuItem value={'I - VIm - IV - V'}>I – vi – IV – V ('50s)</MenuItem>
                   <MenuItem value={'Im - VII - VI - V'}>i - VII - VI - V (Andalusian)</MenuItem>
                   <MenuItem value={'IIm - V - I'}>ii – V – I</MenuItem>
-                  <MenuItem value={'I - V - VIm - iii - IV - I - IV - V'}>I – V – vi – iii – IV – I – IV – V</MenuItem>
+                  <MenuItem value={'I - V - VIm - iii - IV - I - IV - V'}>
+                    I – V – vi – iii – IV – I – IV – V
+                  </MenuItem>
                   <MenuItem value={'I7 - VI7 - V7'}>I7 - VI7 - V7</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={3}>
-            </Grid>
-            <Grid item xs={3}>
-            </Grid>
+            <Grid item xs={3}></Grid>
+            <Grid item xs={3}></Grid>
           </React.Fragment>
         </Grid>
       </Grid>

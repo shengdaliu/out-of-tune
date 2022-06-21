@@ -37,15 +37,12 @@ function ChordTable(props) {
   const [track, setTrack] = useState([])
 
   useEffect(() => {
-    const chords = Progression.fromRomanNumerals(
-      props.keySignature,
-      props.progression
-    )
+    const chords = Progression.fromRomanNumerals(props.keySignature, props.progression)
     const calibratedChords = []
     chords.forEach((chord) => {
       calibratedChords.push({
         chord: chord,
-        notes: Chord.chord(chord).notes.map((x) => x + '4')
+        notes: Chord.chord(chord).notes.map((x) => x + '4'),
       })
     })
 
@@ -54,9 +51,7 @@ function ChordTable(props) {
 
   function handlePlayChord(chord, duration) {
     const chordNotes = Chord.chord(chord).notes.map((x) => x + '4')
-    console.log(
-      `This chord ${chord} with notes ${chordNotes} is played for ${duration}.`
-    )
+    console.log(`This chord ${chord} with notes ${chordNotes} is played for ${duration}.`)
     return polySynth.triggerAttackRelease(chordNotes, duration)
   }
 
@@ -74,7 +69,7 @@ function ChordTable(props) {
     // ])
 
     var part = new Part(
-      function(time, event) {
+      function (time, event) {
         // the events will be given to the callback with the time they occur
         // synth.triggerAttackRelease(event.note, event.dur, time)
         polySynth.triggerAttackRelease(event.chordNotes, event.duration, time)
@@ -92,7 +87,7 @@ function ChordTable(props) {
           chordNotes: track[3].chord,
           duration: '8n',
         },
-      ]
+      ],
     )
 
     console.log(track)
@@ -125,7 +120,7 @@ function ChordTable(props) {
         >
           Chord {track[i].chord} 2n
         </Paper>
-      </Grid>
+      </Grid>,
     )
   }
 

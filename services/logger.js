@@ -10,28 +10,25 @@ const logger = createLogger({
     // }),
     format.errors({ stack: true }),
     format.splat(),
-    format.json()
+    format.json(),
   ),
   transports: [
     new transports.File({ filename: 'error.log', level: 'error' }),
-    new transports.File({ filename: 'out.log' })
-  ]
+    new transports.File({ filename: 'out.log' }),
+  ],
 })
-
 
 // If we're not in production then **ALSO** log to the `console`
 // with the colorized simple format.
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new transports.Console({
-    level: 'info',
-    format: format.combine(
-      timestamp(),
-      format.colorize(),
-      format.simple(),
-    ),
-    handleExceptions: true
-  }))
+  logger.add(
+    new transports.Console({
+      level: 'info',
+      format: format.combine(timestamp(), format.colorize(), format.simple()),
+      handleExceptions: true,
+    }),
+  )
 }
 
 module.exports = logger

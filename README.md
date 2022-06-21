@@ -40,7 +40,6 @@ To run this locally please use this command:
 npm start
 ```
 
-
 ## Dependencies
 
 This project is based on other packages and music theory libraries:
@@ -60,7 +59,7 @@ This project is based on other packages and music theory libraries:
 
 ## Authors
 
-* **Shengda Liu** - *Initial work* - [shengdaliu](https://github.com/shengdaliu)
+- **Shengda Liu** - _Initial work_ - [shengdaliu](https://github.com/shengdaliu)
 
 <!-- See also the list of [contributors]() who participated in this project. -->
 

@@ -16,7 +16,7 @@ const synth = new Synth().toMaster()
 // a 4 voice Synth
 const polySynth = new PolySynth(Synth).toDestination()
 
-function ScaleNotes (props) {
+function ScaleNotes(props) {
   const [notes, setNotes] = useState([])
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function ScaleNotes (props) {
     setNotes(notes)
   }, [props.keySignature])
 
-  function handlePlayNote (note, duration) {
+  function handlePlayNote(note, duration) {
     console.log(`This note ${note} is played for ${duration}.`)
     synth.triggerAttackRelease(note, duration)
   }
@@ -33,12 +33,20 @@ function ScaleNotes (props) {
   for (let i = 0; i < notes.length; i++) {
     notesRow.push(
       <Grid key={i} item xs={12 / notes.length}>
-        <Paper key={i} style={{
-          textAlign: 'center',
-          color: 'grey',
-          padding: '20px'
-        }} onClick={() => { handlePlayNote(notes[i], "8n") }}>Note { notes[i] } 8n</Paper>
-      </Grid>
+        <Paper
+          key={i}
+          style={{
+            textAlign: 'center',
+            color: 'grey',
+            padding: '20px',
+          }}
+          onClick={() => {
+            handlePlayNote(notes[i], '8n')
+          }}
+        >
+          Note {notes[i]} 8n
+        </Paper>
+      </Grid>,
     )
   }
 
@@ -47,9 +55,7 @@ function ScaleNotes (props) {
       <div className={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
           <Grid container item xs={12} spacing={3}>
-            <React.Fragment>
-              {notesRow}
-            </React.Fragment>
+            <React.Fragment>{notesRow}</React.Fragment>
           </Grid>
         </Grid>
       </div>

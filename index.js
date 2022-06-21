@@ -61,7 +61,10 @@ logger.info('%j', Mode.mode('major'))
 //   seventh: "Maj7",
 // }
 
-logger.info('%j', Mode.entries().map(mode => mode.name))
+logger.info(
+  '%j',
+  Mode.entries().map((mode) => mode.name),
+)
 // => ["ionian", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian"];
 
 logger.info('%j', Chord.chord('Cmaj7'))
