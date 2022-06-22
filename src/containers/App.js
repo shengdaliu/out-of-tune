@@ -7,7 +7,7 @@ import BaseNotes from '../components/BaseNotes'
 
 function App() {
   const [keySignature, setKeySignature] = useState('C')
-  const [progression, setProgression] = useState('IV - V - iii - VIm')
+  const [progression, setProgression] = useState('IV - V - IIIm - VIm')
 
   function handleKeyChangeEvent(e) {
     setKeySignature(e.target.value)

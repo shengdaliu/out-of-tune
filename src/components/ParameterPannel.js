@@ -52,11 +52,11 @@ function ParameterPannel(props) {
                   <MenuItem value={'V - VIm - IV - I'}>V – vi – IV – I</MenuItem>
                   <MenuItem value={'VIm - IV - I - V'}>vi – IV - I – V (Pessimistic)</MenuItem>
                   <MenuItem value={'IV - I - V - VIm'}>IV - I – V - vi</MenuItem>
-                  <MenuItem value={'IV - V - iii - VIm'}>IV - V - iii - vi (J-Pop/Rock)</MenuItem>
+                  <MenuItem value={'IV - V - IIIm - VIm'}>IV - V - iii - vi (J-Pop/Rock)</MenuItem>
                   <MenuItem value={'I - VIm - IV - V'}>I – vi – IV – V ('50s)</MenuItem>
                   <MenuItem value={'Im - VII - VI - V'}>i - VII - VI - V (Andalusian)</MenuItem>
                   <MenuItem value={'IIm - V - I'}>ii – V – I</MenuItem>
-                  <MenuItem value={'I - V - VIm - iii - IV - I - IV - V'}>
+                  <MenuItem value={'I - V - VIm - IIIm - IV - I - IV - V'}>
                     I – V – vi – iii – IV – I – IV – V
                   </MenuItem>
                   <MenuItem value={'I7 - VI7 - V7'}>I7 - VI7 - V7</MenuItem>
